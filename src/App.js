@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Signin from './Signin';
 import Profile from './Profile';
 
@@ -13,13 +13,10 @@ function App() {
   return (
     <div className="wrapper">
       <BrowserRouter>
-        
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/">
-            <Profile />
-          </Route>
+        <Routes>
+          <Route path="/profile" element={<Profile/>}/>
+          <Route path="/" element={<Profile/>}/>
+        </Routes>
       </BrowserRouter>
     </div>
   );
